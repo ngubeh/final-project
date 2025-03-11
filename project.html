@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final project</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header>
+        <h1>PROROZ News</h1>
+      </header>
+    
+      <!-- Navigation -->
+      <nav>
+        <a href="javascript:void(0);" onclick="showPage('home')">Home</a>
+        <a href="javascript:void(0);" onclick="showPage('about')">About</a>
+        <a href="javascript:void(0);" onclick="showPage('services')">Services</a>
+        <a href="javascript:void(0);" onclick="showPage('contact')">Contact</a>
+        <a href="javascript:void(0);" onclick="showPage('login')">Login</a>
+      </nav>
+    
+      <!-- Container for Dynamic Content -->
+      <div class="container" id="content">
+    
+        <!-- Home Page (News Articles) -->
+        <div id="home" style="display: none;">
+          <h2>Latest News</h2>
+          <!-- Generate 10 articles -->
+          <div class="article">
+            <h2>North Sea Collision</h2>
+            <p>Environmental Concerns Rise After Tanker Incident</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(1)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Stock exchange market berrish</h2>
+            <p>US Stock Markets Experience Downturn Amidst Economic Uncertainty</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(2)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Technological Disruptions</h2>
+            <p>Large Cyberattack Strikes X Platform.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(3)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Tension on the conflicts in Ukraine</h2>
+            <p>International Tensions Remain High </p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(4)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(5)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 6</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(6)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 7</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(7)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 8</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(8)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 9</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(9)">Read More</a>
+          </div>
+          <div class="article">
+            <h2>Article Title 10</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique eros vitae elit dictum, at egestas odio vehicula.</p>
+            <a href="javascript:void(0);" class="read-more-btn" onclick="readMore(10)">Read More</a>
+          </div>
+        </div>
+    
+        <!-- About Page -->
+        <div id="about" style="display: none;">
+          <h2>About PROROZ</h2>
+          <p>PROROZ is a modern news website offering up-to-date articles on various topics, designed to keep you informed and engaged.</p>
+        </div>
+    
+        <!-- Services Page -->
+        <div id="services" style="display: none;">
+          <h2>Our Services</h2>
+          <p>We provide a platform for both writers and readers. Our services include real-time news updates, article submissions, and more.</p>
+        </div>
+    
+        <!-- Contact Page -->
+        <div id="contact" style="display: none;">
+          <h2>Contact Us</h2>
+          <p>If you have any questions, feel free to reach out to us!</p>
+          <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+    
+        <!-- Login Page -->
+        <div id="login" style="display: none;">
+          <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required minlength="4" maxlength="10"><br>
+            <input type="password" id="login-password" placeholder="Password" required minlength="4" maxlength="10"><br>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="javascript:void(0);" onclick="showPage('signup')">Sign up</a></p>
+          </div>
+        </div>
+    
+        <!-- Signup Page -->
+        <div id="signup" style="display: none;">
+          <div class="login-container">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required minlength="4" maxlength="10"><br>
+            <input type="password" id="signup-password" placeholder="Password" required minlength="4" maxlength="10"><br>
+            <button onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="javascript:void(0);" onclick="showPage('login')">Login</a></p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Full Article Modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-content"></p>
+        </div>
+      </div>
+    
+      <!-- Footer -->
+      <footer>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 PROROZ News. All Rights Reserved.</p>
+      </footer>
+      <script src="project.js"></script>
+    
+</body>
+</html>
